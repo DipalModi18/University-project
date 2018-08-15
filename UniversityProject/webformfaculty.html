@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+#menu ul{
+    list-style:none;
+}
+#menu ul li{
+    background-color:#333;
+    border:1px solid white;
+    width:19%;       /*16.5em;*/
+    height:3em;
+    line-height:3em;
+    text-align:center;
+    float:left;
+    position:relative;
+}
+#menu ul li a{
+    text-decoration:none;
+    color:white;
+    display:block;
+}
+#menu ul li a:hover
+{
+    background-color:darkcyan; 
+}
+#menu ul ul{
+    position:absolute;
+    display:none;
+}
+#menu ul li:hover >ul{
+    display:block;
+}
+#menu ul ul ul{
+    margin-left:16.5em;
+    top:0px;
+}
+#menu ul ul li, #menu ul ul ul li{
+background-color:#333;
+    border:1px solid white;
+    width:100%;       /*16.5em;*/
+    height:3em;
+    line-height:3em;
+    text-align:center;
+    float:left;
+    position:relative;
+}
+    </style>
+</head>
+<body background="images/Bg.png">
+    <form method="post" action="./WebFormFaculty.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__CRYSTALSTATEctl00$head$CrystalReportViewer1" id="__CRYSTALSTATEctl00$head$CrystalReportViewer1" value="{&#39;common&#39;:{&#39;width&#39;:&#39;1104px&#39;,&#39;Height&#39;:&#39;1202px&#39;,&#39;enableDrillDown&#39;:true,&#39;drillDownTarget&#39;:&#39;_self&#39;,&#39;printMode&#39;:&#39;Pdf&#39;,&#39;displayToolbar&#39;:true,&#39;pageToTreeRatio&#39;:6,&#39;pdfOCP&#39;:true,&#39;promptingType&#39;:&#39;html&#39;,&#39;viewerState&#39;:&#39;/wEXBAUDY3NzZQUkU3lzdGVtLldlYi5VSS5XZWJDb250cm9scy5XZWJDb250cm9sZAUPUmVwb3J0Vmlld1N0YXRlFwcFB0lMT0lVSVNnBQdGYWN0b3J5BZYBQ3J5c3RhbERlY2lzaW9ucy5SZXBvcnRTb3VyY2UuUmVwb3J0U291cmNlRmFjdG9yeSxDcnlzdGFsRGVjaXNpb25zLlJlcG9ydFNvdXJjZSwgVmVyc2lvbj0xMy4wLjIwMDAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02OTJmYmVhNTUyMWUxMzA0BQlSZXBvcnRVUkkFUUU6XFVuaXZlcnNpdHkgcHJvamVjdFxVbml2ZXJzaXR5UHJvamVjdFxVbml2ZXJzaXR5UHJvamVjdFxSZXBvcnRzXGNycHRGYWN1bHR5LnJwdAUKRGVzaWduTW9kZWgFB1JlZnJlc2hoBRJQYWdlUmVxdWVzdENvbnRleHQXBQUVSXNMYXN0UGFnZU51bWJlcktub3duZwUJTG9nT25JbmZvFgEXBgUEVHlwZQIFBQhEYXRhYmFzZQUSVW5pdmVyc2l0eURhdGFiYXNlBQZDdXN0b21oBQpBdHRyaWJ1dGVzFwcFD1FFX0RhdGFiYXNlVHlwZQUMT0xFIERCIChBRE8pBRJRRV9Mb2dvblByb3BlcnRpZXMXEAUXVXNlIEVuY3J5cHRpb24gZm9yIERhdGEFATAFGFRydXN0IFNlcnZlciBDZXJ0aWZpY2F0ZQUBMAUOQXV0byBUcmFuc2xhdGUFAi0xBQ9PTEUgREIgU2VydmljZXMFAi01BRJBcHBsaWNhdGlvbiBJbnRlbnQFCVJFQURXUklURQUnVGFnIHdpdGggY29sdW1uIGNvbGxhdGlvbiB3aGVuIHBvc3NpYmxlBQEwBRFMb2NhbGUgSWRlbnRpZmllcgUEMTAzMwUVRGF0YVR5cGVDb21wYXRpYmlsaXR5BQEwBQ9Jbml0aWFsIENhdGFsb2cFElVuaXZlcnNpdHlEYXRhYmFzZQUTSW50ZWdyYXRlZCBTZWN1cml0eWcFC0RhdGEgU291cmNlBQVESVBBTAUIUHJvdmlkZXIFCVNRTE5DTEkxMQUPQ29ubmVjdCBUaW1lb3V0BQIxNQUPTUFSUyBDb25uZWN0aW9uBQEwBRpVc2UgRFNOIERlZmF1bHQgUHJvcGVydGllc2gFD0dlbmVyYWwgVGltZW91dAUBMAUUUUVfU2VydmVyRGVzY3JpcHRpb24FBURJUEFMBQxEYXRhYmFzZSBETEwFDGNyZGJfYWRvLmRsbAUIUUVfU1FMREJnBQtTU08gRW5hYmxlZGgFD1FFX0RhdGFiYXNlTmFtZQUSVW5pdmVyc2l0eURhdGFiYXNlBRJJbnRlZ3JhdGVkU2VjdXJpdHlnBQZTZXJ2ZXIFBURJUEFMBQ5MYXN0UGFnZU51bWJlcgIBBQpQYWdlTnVtYmVyAgEFFEludGVyYWN0aXZlU29ydEluZm9zFClYU3lzdGVtLkJ5dGUsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OY0BAzwDPwN4A20DbAMgA3YDZQNyA3MDaQNvA24DPQMiAzEDLgMwAyIDPwM+Aw0DCgM8A0EDcgNyA2EDeQNPA2YDUwNvA3IDdANJA24DZgNvAyADeANtA2wDbgNzAzoDeANzA2kDPQMiA2gDdAN0A3ADOgMvAy8DdwN3A3cDLgN3AzMDLgNvA3IDZwMvAzIDMAMwAzEDLwNYA00DTANTA2MDaANlA20DYQMtA2kDbgNzA3QDYQNuA2MDZQMiAyADeANtA2wDbgNzAzoDeANzA2QDPQMiA2gDdAN0A3ADOgMvAy8DdwN3A3cDLgN3AzMDLgNvA3IDZwMvAzIDMAMwAzEDLwNYA00DTANTA2MDaANlA20DYQMiAyADLwM+BQlScHRTb3VyY2UFN0NyeXN0YWxEZWNpc2lvbnMuUmVwb3J0U291cmNlLk5vbkhUVFBDYWNoZWRSZXBvcnRTb3VyY2UFBHJzSUQFFENyeXN0YWxSZXBvcnRTb3VyY2Ux&#39;,&#39;rptAlbumOrder&#39;:[&#39;0&#39;],&#39;toolPanelType&#39;:&#39;GroupTree&#39;,&#39;toolPanelWidth&#39;:200,&#39;toolPanelWidthUnit&#39;:&#39;px&#39;,&#39;iactParams&#39;:[{&#39;paramName&#39;:&#39;FacultyID&#39;,&#39;description&#39;:&#39;Enter FacultyID:&#39;,&#39;valueDataType&#39;:&#39;n&#39;,&#39;value&#39;:[15],&#39;allowCustomValue&#39;:true,&#39;allowMultiValue&#39;:false,&#39;allowRangeValue&#39;:false,&#39;allowDiscreteValue&#39;:true,&#39;isEditable&#39;:true,&#39;usage&#39;:57,&#39;isDataFetching&#39;:true,&#39;attributes&#39;:{&#39;IsDCP&#39;:false},&#39;isOptionalPrompt&#39;:false,&#39;allowNullValue&#39;:false,&#39;defaultValues&#39;:[],&#39;defaultDisplayType&#39;:1}],&#39;paramOpts&#39;:{&#39;numberFormat&#39;:{&#39;groupSeperator&#39;:&#39;,&#39;,&#39;decimalSeperator&#39;:&#39;.&#39;},&#39;dateFormat&#39;:&#39;M/d/yyyy&#39;,&#39;timeFormat&#39;:&#39;H:mm:ss&#39;,&#39;dateTimeFormat&#39;:&#39;M/d/yyyy H:mm:ss&#39;,&#39;booleanFormat&#39;:{&#39;true&#39;:&#39;True&#39;,&#39;false&#39;:&#39;False&#39;},&#39;maxNumParameterDefaultValues&#39;:&#39;200&#39;,&#39;canOpenAdvancedDialog&#39;:true},&#39;zoom&#39;:100,&#39;zoomFromUI&#39;:false,&#39;lastRefresh&#39;:&#39;3/31/2018 3:35:01 PM&#39;},&#39;curViewId&#39;:&#39;0&#39;,&#39;0&#39;:{&#39;rptViewLabel&#39;:&#39;Main Report&#39;,&#39;gpTreeCurrentExpandedPaths&#39;:{},&#39;vCtxt&#39;:&#39;/wEXAwUVSXNMYXN0UGFnZU51bWJlcktub3duZwUOTGFzdFBhZ2VOdW1iZXICAQUKUGFnZU51bWJlcgIB&#39;,&#39;pageNum&#39;:1}}" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="7SpL2hpmWBzBCzJjf/QgRYm6N84DhZN3NpTrHbxrjoQw5OVNvRcNgl9nt/X9yRA5Li7/jsRrN4q3TMeAWv3jpm0ERJ78sncWRx1fO4HsmuO8612LpMuY4ze+L9C2IMZOybIY9G0qaMIVdnqBXxWkRYrf12MDWW88b/EelhUCIvg1NkNS/efwqda5QqTM487+Gs84E/0RXHkMAMiWF/oguQ0a3b6n3Efbrs7uNMpaZifRxfK4ulBxFVklWF+RdaLQub61WOzE8o1oAxPWj59a4JcIxyIDlafoaHUcIkcl5zFedl/A/81NFpDG3aMzIQqZAUmThdGIpxcGQWqNb5rwTYpYvgFZrBd6TYA9njNeA96x725Ivv/8bgvaMqglbaCOSTTL/gwkE2hPN8nCkMMzLT4A7aXZNXUmFXvAfbhuUOfLhiSpanrq0zY3TW75yeEMzXiaZXH+qw4zJ3wA8hkiyPUDf+riysecVl27hADJcMoOHrr4jtMBr3I+U5jsFd2bvfIMmZcF8eIuAgKadxEqlQd98nyk766cK2fU3bcxxhavEsCiZoiKgCCW9vRH7RAX7Bpd0xxkmHz7sgE8ssdb2xQ7HNsARPy/Q+DYj3xcSVuLu7+P9vcXRon3Wn1j2JbE2YLWG+tSv4Zk2NBBmv+O2IAP7lttgQVxTfAavvwgBewQpFgwryOAmeHOeww1HRkDDWg95bctdAedWk8cExthUcQwjtJh14m51i4tFBoHoZTtxKuz2kAJxaCHnAEYu/d/lNfU5SV/Di230w2p0bsxTpDnvIBEoOvA2nivmmctzWhF3nWq5vn+u8DBnI2iagNrXN+FWWwvWeUkNkfW3+JEF1lE7TzonzjI1gEMsM8qc1qiw/KfPDCOtWEonDoC6tP9KGfK4Qfe8MmWt/b9XE8M42JEwgxypBxctOIaAegIIlKzrZ9xKnOR7rmx3JxKAmJbak/EQ9hq/WEhUpDP+er+i2HAts6tte4M0Sm7Shl6qj+UAn85AiX+i1vvJs/bT3cpjyYcXfLLASROZCOz/rXBKA==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZPQv2cqK6wftOKRGLoJtM0s_QMm-ymG8AckTCzlR9sVwIaCf0roil1G6rGut04hWag2&amp;t=636308868462328751" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+if(typeof(crv_config)=='undefined'){crv_config=new Object();}crv_config.lang="en-US";crv_config.useAsync = true;//]]>
+</script>
+
+<script src="http://localhost:55122/aspnet_client/system_web/4_0_30319/crystalreportviewers13/js/crviewer/crv.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+bobj.event.publish('saveViewState');
+return true;
+}
+//]]>
+</script>
+
+        <div style="height:10%; background-color:#000066">
+            <img src="images/msuWhite.png" style="width:780px; height:110px"/>
+        </div>
+
+        <nav class="navbar navbar-default">
+        <div id="menu" style="background-color: #333;">
+            <ul>
+                <li><a href="#">Master<span><img src="images/down1.png"</span></a>
+                    <ul>
+                        <li><a href="Faculty.aspx">Faculty</a></li>
+                        <li><a href="Department.aspx">Department</a></li>
+                        <li><a href="Employee.aspx">Employee</a></li>
+                        <li><a href="SalarySearch.aspx">Salary</a></li>
+                        <li><a href="EmployeeArrear.aspx">Employee Arrear</a></li>
+                        <li><a href="ManualBillsSearch.aspx">Manual Bills</a></li>
+                        <li><a href="Savings.aspx">Savings</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Extra Remuneration<span><img src="images/down1.png"</span></a>
+                    <ul>
+                        <li><a href="PartTimeDegreeCourse.aspx">Part Time Degree Course</a></li>
+                        <li><a href="ExamRemuneration.aspx">Exam Remuneration</a></li>
+                        <li><a href="TestingSearch.aspx">Testing</a></li>
+                        <li><a href="PTPGDCASearch.aspx">PT PGDCA</a></li>
+                        <li><a href="DaArrears.aspx">D. A. Arrears</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Reports<span><img src="images/down1.png"</span></a>
+                    <ul>
+                        <li><a href="#">Master Reports<span><img src="images/right1.png"</span></a>
+                            <ul>
+                                <li><a href="WebFormFaculty.aspx">Faculty</a></li>
+                                <li><a href="WebFormDepartment.aspx">Department</a></li>
+                                <li><a href="WebFormEmployee.aspx">Employee</a></li>
+                                <li><a href="PopupSalary.aspx">Salary</a></li>
+                                <li><a href="PopupArrears.aspx">Arrears</a></li>
+                                <li><a href="PopupManualBills.aspx">Manual Bills</a></li>
+                                <li><a href="PopupSavings.aspx">Savings</a></li>
+                                <li><a href="PopupPTD.aspx">PTD</a></li>
+                                <li><a href="PopupExamRemuneration.aspx">Exam Remuneration</a></li>
+                                <li><a href="PopupTesting.aspx">Testing</a></li>
+                                <li><a href="PopupPTPGDCA.aspx">PT PGDCA</a></li>
+                                <li><a href="PopupDaArrears.aspx">D. A. Arrears</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="PopupSalaryCertificate.aspx" target="_blank">Salary Certificate</a></li>
+                        <li><a href="PopupForm16.aspx" target="_blank">Form16</a></li>
+                        <li><a href="PopupEstimateTaxCalculation.aspx" target="_blank">Estimate Tax Calculation</a></li>
+                        <li><a href="#">Quartely Reports<span><img src="images/right1.png"</span></a>
+                            <ul>
+                                <li><a href="#">First Quarter</a></li>
+                                <li><a href="#">Second Quarter</a></li>
+                                <li><a href="#">Third Quarter</a></li>
+                                <li><a href="#">Fourth Quarter</a></li>
+                                <li><a href="#">Quartely Reports(Annual)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Annual Report Data</a></li>
+                        <li><a href="#">Salary Details for F.Y.</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Utility<span><img src="images/down1.png"</span></a>
+                    <ul>
+                        <li><a href="ChangePassword.aspx">Change Password</a></li>
+                        <li><a href="Calculator.aspx" target="_blank">Calculator</a></li>
+                    </ul>
+                </li>
+                <li><a href="LoginPage.aspx">Log out</a></li>
+            </ul>
+        </div>
+            </nav>
+    <div>
+        
+    <p>
+        <br />
+    </p>
+    <p>
+    </p>
+    <div >
+        <div id="head_CrystalReportViewer1" style="border-style:None;">
+	<link rel="stylesheet" type="text/css" href="http://aspnet_client/system_web/4_0_30319/crystalreportviewers13/js/crviewer/images/style.css" />
+	<style> .drill_cursor { cursor: url('http://aspnet_client/system_web/4_0_30319/crystalreportviewers13/js/crviewer/images/drill_cursor.cur'), default; }</style>
+	<script type="text/javascript">
+		<!--
+		bobj.crv.writeWidget({'cons':'bobj.crv.newViewer','args':{'id':'head_CrystalReportViewer1__UI','isDisplayModalBG':false,'visualStyle':{'width':'1104px','height':'1202px'},'layoutType':'fitReport'},'children':[{'cons':'bobj.crv.newPrintUI','args':{'isActxPrinting':false}},{'cons':'bobj.crv.newReportProcessingUI'},{'cons':'bobj.crv.newExportUI','args':{'canSupportRange':true,'availableFormats':[{'name':'Crystal Reports (RPT)','value':'CrystalReports'},{'name':'PDF','value':'PDF'},{'name':'Microsoft Excel (97-2003)','value':'MSExcel'},{'name':'Microsoft Excel (97-2003) Data-Only','value':'RecordToMSExcel'},{'name':'Microsoft Excel Workbook Data-only','value':'RecordToMSExcel2007'},{'name':'Microsoft Word (97-2003)','value':'MSWord'},{'name':'Microsoft Word (97-2003) - Editable','value':'EditableRTF'},{'name':'Rich Text Format (RTF)','value':'RTF'},{'name':'Character Separated Values (CSV)','value':'CharacterSeparatedValues'},{'name':'XML','value':'XML'}]}},{'cons':'bobj.crv.newToolbar','args':{'visualStyle':{'className':'crtoolbar'},'id':'CrystalReportViewer1_toptoolbar'},'children':[{'cons':'bobj.crv.newToolbarButtonGroup','args':{'id':'_btnGrp'},'children':[{'cons':'bobj.crv.newPrintButton','args':{'id':'CrystalReportViewer1_toptoolbar_print','isDisabled':false}},{'cons':'bobj.crv.newDrillUpButton','args':{'id':'CrystalReportViewer1_toptoolbar_drillUp','isDisabled':true}},{'cons':'bobj.crv.newToolbarButtonGroupSeparator'},{'cons':'bobj.crv.newExportButton','args':{'id':'CrystalReportViewer1_toptoolbar_export','isDisabled':false}}]},{'cons':'bobj.crv.newToolbarSeparator'},{'cons':'bobj.crv.newSearchTextControl','args':{'id':'CrystalReportViewer1_toptoolbar_search','searchText':''}},{'cons':'bobj.crv.newToolbarSeparator'},{'cons':'bobj.crv.newPrevPageButton','args':{'id':'CrystalReportViewer1_toptoolbar_prevPg','isDisabled':false}},{'cons':'bobj.crv.newNextPageButton','args':{'id':'CrystalReportViewer1_toptoolbar_nextPg','isDisabled':false}},{'cons':'bobj.crv.newSelectPageControl','args':{'curPage':1,'numPages':'1','id':'CrystalReportViewer1_toptoolbar_selectPg','showMenu':true}},{'cons':'bobj.crv.newZoomControl','args':{'id':'CrystalReportViewer1_toptoolbar_zoom','initialZoom':100}},{'cons':'bobj.crv.newLogoIcon','args':{'id':'CrystalReportViewer1_toptoolbar_logo','layoutAlign':'right'}}]},{'cons':'bobj.crv.newReportAlbum','args':{'initTabIdx':0,'displayDrilldownTab':true},'children':[{'cons':'bobj.crv.newReportView','args':{'viewStateId':'0','label':'Main Report','isMainReport':true},'children':[{'cons':'bobj.crv.newReportPage','args':{'width':816,'height':1056,'documentView':'PrintLayout','content':'\r\n<style>\r\n    div.crystalstyle div {position:absolute; z-index:25}\r\n    div.crystalstyle a {text-decoration:none}\r\n    div.crystalstyle a img {border-style:none; border-width:0}\r\n    div.crystalstyle div.tbg {background: url("http://aspnet_client/system_web/4_0_30319/crystalreportviewers13/js/dhtmllib/images/transp.gif") repeat-x repeat-y;}\r\n    .drill_cursor { cursor: url("http://aspnet_client/system_web/4_0_30319/crystalreportviewers13/js/crviewer/images/drill_cursor.cur"), default; }\t.fc35747f58-0a52-4469-9c14-0b7fa225c4e7-0 {font-size:12pt;color:#000000;font-family:"Arial";font-weight:bold;text-decoration:underline !important;}\r\n\t.fc35747f58-0a52-4469-9c14-0b7fa225c4e7-1 {font-size:10pt;color:#000000;font-family:"Arial";font-weight:bold;}\r\n\t.fc35747f58-0a52-4469-9c14-0b7fa225c4e7-2 {font-size:10pt;color:#000000;font-family:"Arial";font-weight:normal;text-decoration:underline !important;}\r\n\t.fc35747f58-0a52-4469-9c14-0b7fa225c4e7-3 {font-size:10pt;color:#000000;font-family:"Arial";font-weight:normal;}\r\n\t.ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0 {border-color:#000000;border-left-width:0px;border-right-width:0px;border-top-width:0px;border-bottom-width:0px;}\r\n<\/style>\r\n<div name="ctl00$head$CrystalReportViewer1$ctl01" id="head_CrystalReportViewer1_ctl01" class="crystalstyle" style="overflow:hidden;width:100%;height:100%;">\r\n\t<div class="crystalstyle" style="margin-top:24px;margin-bottom:24px;margin-left:24px;margin-right:24px;top:0px;left:0px;width:768px;height:1008px;overflow:hidden;">\r\n    <div id="Section1" style="z-index:3;top:0px;left:0px;width:768px;height:34px;">\r\n\r\n    <\/div>\r\n    <div id="Text1" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:0px;left:280px;width:155px;height:34px;">\r\n        <div style="text-align:center;">\r\n            <p nowrap style="position:relative;padding-left:1px;margin:0px;"><span style="position:relative;display:block;line-height:19px;"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-0">Faculty&nbsp;Information<\/span><\/span><\/p>\r\n        <\/div>\r\n    <\/div>\r\n    <div id="Section2" style="z-index:3;top:34px;left:0px;width:768px;height:41px;">\r\n\r\n    <\/div>\r\n    <div id="Text2" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:34px;left:17px;width:169px;height:15px;">\r\n        <p nowrap style="position:relative;padding-left:1px;margin:0px;"><span style="position:relative;display:block;line-height:16px;"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-1">Faculty&nbsp;ID:15.00<\/span><\/span><\/p>\r\n    <\/div>\r\n    <div id="Text3" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:60px;left:16px;width:133px;height:15px;">\r\n        <p nowrap style="position:relative;padding-left:1px;margin:0px;"><span style="position:relative;display:block;line-height:15px;"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-2">FACNAME<\/span><\/span><\/p>\r\n    <\/div>\r\n    <div id="Text4" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:60px;left:264px;width:133px;height:15px;">\r\n        <p nowrap style="position:relative;padding-left:1px;margin:0px;"><span style="position:relative;display:block;line-height:15px;"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-2">ADDRESS<\/span><\/span><\/p>\r\n    <\/div>\r\n    <div id="Text6" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:60px;left:408px;width:133px;height:15px;">\r\n        <p nowrap style="position:relative;padding-left:1px;margin:0px;"><span style="position:relative;display:block;line-height:15px;"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-2">CITY<\/span><\/span><\/p>\r\n    <\/div>\r\n    <div id="Text7" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:60px;left:600px;width:133px;height:15px;">\r\n        <p nowrap style="position:relative;padding-left:1px;margin:0px;"><span style="position:relative;display:block;line-height:15px;"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-2">DEAN<\/span><\/span><\/p>\r\n    <\/div>\r\n    <div id="Text8" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:60px;left:520px;width:59px;height:15px;">\r\n        <p align="right" nowrap style="position:relative;padding-left:1px;margin:0px;"><span style="position:relative;display:block;line-height:15px;"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-2">PINCODE<\/span><\/span><\/p>\r\n    <\/div>\r\n    <div id="Section3" style="z-index:3;top:75px;left:0px;width:768px;height:27px;">\r\n\r\n    <\/div>\r\n    <div id="FACNAME1" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:75px;left:16px;width:133px;height:15px;">\r\n        <table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n            <tr>\r\n                <td><table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n                    <tr>\r\n                        <td nowrap="true"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-3">TECHNOLOGY&nbsp;AND&nbsp;ENGINEERING<\/span><\/td>\r\n                    <\/tr>\r\n                <\/table><\/td>\r\n            <\/tr>\r\n        <\/table>\r\n    <\/div>\r\n    <div id="ADDR11" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:75px;left:264px;width:133px;height:15px;">\r\n        <table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n            <tr>\r\n                <td><table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n                    <tr>\r\n                        <td nowrap="true"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-3">KALABHAVAN<\/span><\/td>\r\n                    <\/tr>\r\n                <\/table><\/td>\r\n            <\/tr>\r\n        <\/table>\r\n    <\/div>\r\n    <div id="CITY1" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:75px;left:408px;width:133px;height:15px;">\r\n        <table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n            <tr>\r\n                <td><table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n                    <tr>\r\n                        <td nowrap="true"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-3">VADODARA<\/span><\/td>\r\n                    <\/tr>\r\n                <\/table><\/td>\r\n            <\/tr>\r\n        <\/table>\r\n    <\/div>\r\n    <div id="DEAN1" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:75px;left:600px;width:133px;height:15px;">\r\n        <table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n            <tr>\r\n                <td><table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n                    <tr>\r\n                        <td nowrap="true"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-3">Mr.&nbsp;Shardchandra&nbsp;M.Joshi<\/span><\/td>\r\n                    <\/tr>\r\n                <\/table><\/td>\r\n            <\/tr>\r\n        <\/table>\r\n    <\/div>\r\n    <div id="PINCODE1" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:75px;left:520px;width:59px;height:15px;text-align:right;">\r\n        <table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n            <tr>\r\n                <td><table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n                    <tr>\r\n                        <td align="right" nowrap="true"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-3" style="position:absolute;right:0px;">&nbsp;390,001<\/span><\/td>\r\n                    <\/tr>\r\n                <\/table><\/td>\r\n            <\/tr>\r\n        <\/table>\r\n    <\/div>\r\n    <div id="Section4" style="z-index:3;top:102px;left:0px;width:768px;height:15px;">\r\n\r\n    <\/div>\r\n    <div id="Section5" style="z-index:3;top:964px;left:0px;width:768px;height:44px;">\r\n\r\n    <\/div>\r\n    <div id="PageNumber1" class="ad4df9ef4a-8fe1-4f94-a8b2-81a4b988c1eb-0" style="top:993px;left:0px;width:63px;height:15px;text-align:right;">\r\n        <table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n            <tr>\r\n                <td><table width="100%" border="0" cellpadding="0" cellspacing="0">\r\n                    <tr>\r\n                        <td align="right" nowrap="true"><span class="fc35747f58-0a52-4469-9c14-0b7fa225c4e7-3" style="position:absolute;right:0px;">1<\/span><\/td>\r\n                    <\/tr>\r\n                <\/table><\/td>\r\n            <\/tr>\r\n        <\/table>\r\n    <\/div>\r\n\r\n<\/div>\r\n\r\n<\/div>\r\n','extraCssFileUrl':''}}]}]},{'cons':'bobj.crv.newLeftPanel','args':{'hasToggleGroupTreeButton':true,'hasToggleParameterPanelButton':true},'children':[{'cons':'bobj.crv.newToolPanel','args':{'initialViewType':'GroupTree','width':'200px'},'children':[{'cons':'bobj.crv.newGroupTree','args':{'toolPanelType':'GroupTree','enableDrilldown':true,'enableNavigation':true,'lastExpandedPath':'','label':'Group Tree','visualStyle':{}}},{'cons':'bobj.crv.params.newParameterPanel','args':{'toolPanelType':'ParameterPanel','label':'Interactive Parameters','isResetParamPanel':false}}]}]},{'cons':'bobj.crv.newStatusbar','args':{'id':'head_CrystalReportViewer1__UI_statusbar'},'children':[{'cons':'bobj.crv.newStatusbarBreadcrumb','args':{'values':[]}},{'cons':'bobj.crv.newStatusbarVersionIndicator'}]}]}); //-->
+
+	</script>
+</div>
+        
+    </div>
+
+    </div>
+    
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="19BF26F4" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+bobj.crv.stateManager.setComponentState('head_CrystalReportViewer1__UI',eval('('+document.getElementById('__CRYSTALSTATEctl00$head$CrystalReportViewer1').value+')'));
+WebForm_InitCallback();new bobj.crv.ViewerListener('head_CrystalReportViewer1__UI',new bobj.crv.AspDotNetAdapter("__doPostBack('ctl00$head$CrystalReportViewer1','VIEW-CONTEXT')", "VIEW-CONTEXT", "__CRYSTALSTATEctl00$head$CrystalReportViewer1","WebForm_DoCallback('ctl00$head$CrystalReportViewer1','arg','cb','ctx','errcb',true)","4.6.1055.0"));//]]>
+</script>
+</form>
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"11a34b9a3dbb4ff1bde644a27b01a97b"}
+</script>
+<script type="text/javascript" src="http://localhost:57631/4c71dd5f99eb460198149c0539b1add2/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

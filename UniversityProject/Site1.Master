@@ -1,0 +1,240 @@
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site1.master.cs" Inherits="UniversityProject.Site1" %>
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="UniStyle.css" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.double-drop
+{
+    display:none;
+    position:inherit;
+    float:right;
+    overflow:hidden;
+}
+.double-drop a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+</style>
+</head>
+<body background="images/Bg.png">
+    <form id="form1" runat="server">
+    <div style="height:10%; background-color:#000066">
+            <img src="images/msuWhite.png" style="width:780px; height:110px"/>
+        <div>
+            <!--
+            <asp:Menu ID="menu" runat="server" Orientation="Horizontal" Height="50px" Width="100%" BackColor="#0c769f" ForeColor="#ffffff" DynamicHorizontalOffset="2" DynamicHoverStyle-ForeColor="#FFFFFF" Font-Size="1em" StaticSubMenuIndent="10px" Font-Names="Bookman Old Style" CssClass="Menu">
+                <DynamicHoverStyle BackColor="#000066" ForeColor="white" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#0c769f"  />
+                <DynamicSelectedStyle BackColor="#000000" />
+                <DynamicItemTemplate>
+                   <%-- <%# Eval("Text") --%>
+                </DynamicItemTemplate>
+                <Items>
+     
+                    <asp:MenuItem Text="Master" Value="Master">
+                        <asp:MenuItem Text="Faculty" Value="Faculty" NavigateUrl="~/Faculty.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Department" Value="Department" NavigateUrl="~/Department.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Employee" Value="Employee" NavigateUrl="~/Employee.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Salary" Value="Salary"></asp:MenuItem>
+                        <asp:MenuItem Text="Employee Arrear" Value="Employee Arrear" NavigateUrl="~/EmployeeArrear.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Manual Bills" Value="Manual Bills"></asp:MenuItem>
+                        <asp:MenuItem Text="Savings" Value="Savings"></asp:MenuItem>                       
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Extra Remunerations" Value="Extra Remunerations">
+                            <asp:MenuItem Text="Part Time Degree Course" Value="Part Time Degree Course"></asp:MenuItem>
+                            <asp:MenuItem Text="Exam Remuneration" Value="Exam Remuneration"></asp:MenuItem>
+                            <asp:MenuItem Text="Testing" Value="Testing"></asp:MenuItem>
+                            <asp:MenuItem Text="PT PGDCA" Value="PT PGDCA"></asp:MenuItem>
+                            <asp:MenuItem Text="D. A. Arrears" Value="D. A. Arrears"></asp:MenuItem>
+                    </asp:MenuItem>                
+                    <asp:MenuItem Text="Reports" Value="Reports">
+                        <asp:MenuItem Text="Master Reports" Value="Master Reports">
+                            <asp:MenuItem Text="Faculty" Value="Faculty"></asp:MenuItem>
+                            <asp:MenuItem Text="Department" Value="Department"></asp:MenuItem>
+                            <asp:MenuItem Text="Empolyee" Value="Empolyee"></asp:MenuItem>
+                            <asp:MenuItem Text="Salary" Value="Salary"></asp:MenuItem>
+                            <asp:MenuItem Text="Arrears" Value="Arrears"></asp:MenuItem>
+                            <asp:MenuItem Text="Manual Bills" Value="Manual Bills"></asp:MenuItem>
+                            <asp:MenuItem Text="Savings" Value="Savings"></asp:MenuItem>
+                            <asp:MenuItem Text="PTD" Value="PTD"></asp:MenuItem>
+                            <asp:MenuItem Text="Exam Remuneration" Value="Exam Remuneration"></asp:MenuItem>
+                            <asp:MenuItem Text="Testing" Value="Testing"></asp:MenuItem>
+                            <asp:MenuItem Text="PT PGDCA" Value="PT PGDCA"></asp:MenuItem>
+                            <asp:MenuItem Text="D. A. Arrears" Value="D. A. Arrears"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Salary Certificate" Value="Salary Certificate"></asp:MenuItem>
+                        <asp:MenuItem Text="Form 16" Value="Form 16"></asp:MenuItem>
+                        <asp:MenuItem Text="Estimate Tax Calculations" Value="Estimate Tax Calculations"></asp:MenuItem>
+                        <asp:MenuItem Text="Quaterly Reports" Value="Quaterly Reports">
+                            <asp:MenuItem Text="First Quarter" Value="First Quarter"></asp:MenuItem>
+                            <asp:MenuItem Text="Second Quarter" Value="Second Quarter"></asp:MenuItem>
+                            <asp:MenuItem Text="Third Quarter" Value="Third Quarter"></asp:MenuItem>
+                            <asp:MenuItem Text="Fourth Quarter" Value="Fourth Quarter"></asp:MenuItem>
+                            <asp:MenuItem Text="Quarterly Reports (Annual)" Value="Quarterly Reports (Annual)"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Annual Report Data" Value="Annual Report Data"></asp:MenuItem>
+                        <asp:MenuItem Text="Salary Details For F Y" Value="Salary Details For F Y"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Utility" Value="Utility">
+                        <asp:MenuItem Text="Change Password" Value="Change Password"></asp:MenuItem>
+                        <asp:MenuItem Text="Calculator" Value="Calculator"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Log Out" Value="Log Out"></asp:MenuItem>
+                </Items>
+
+                <StaticHoverStyle BackColor="#ccccff" ForeColor="Black" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#FFCC66" />
+
+            </asp:Menu>
+            -->
+            <div class="navbar">
+                <!--<a href="#home">Master</a>
+                <a href="#news">Extra Remuneration</a>-->
+                <div class="dropdown">
+                     <button class="dropbtn">Master
+                        <i class="fa fa-caret-down"></i>
+                     </button>
+                     <div class="dropdown-content">
+                         <a href="Faculty.aspx">Faculty</a>
+                         <a href="Department.aspx">Department</a>
+                         <a href="Employee.aspx">Employee</a>
+                         <a href="#">Salary</a>
+                         <a href="EmployeeArrear.aspx">Employee Arrear</a>
+                         <a href="#">Manual Bills</a>
+                         <a href="#">Savings</a>
+                     </div>
+                </div> 
+                <div class="dropdown">
+                     <button class="dropbtn">Extra Remuneration
+                        <i class="fa fa-caret-down"></i>
+                     </button>
+                     <div class="dropdown-content">
+                         <a href="#">Part Time Degree Course</a>
+                         <a href="ExamRemuneration.aspx">Exam Remuneration</a>
+                         <a href="#">Testing</a>
+                         <a href="#">PT PGDCA</a>
+                         <a href="#">D. A. Arrears</a>                        
+                     </div>
+                </div> 
+                <div class="dropdown">
+                     <button class="dropbtn">Reports
+                        <i class="fa fa-caret-down"></i>
+                     </button>
+                     <div class="dropdown-content">
+                         <a href="#">Master Reports</a>
+                                      <div class="dropdown">
+                                         
+                                         <div class="double-drop">
+                                            <a href="#">Faculty</a>
+                                            <a href="#">Department</a>
+                                            <a href="#">Employee</a>
+                                            <a href="#">Salary</a>
+                                            <a href="#">Arrears</a>                        
+                                          </div>
+                                      </div> 
+                         <a href="#">Salary Certificate</a>
+                         <a href="#">Form 16</a>
+                         <a href="#">Estimate Tax Calculations</a>
+                         <a href="#">D. A. Arrears</a>
+                     </div>
+                </div>
+                <a href="#news">Utility</a>
+                <a href="#news">Log out</a>
+            </div>
+        </div>
+        
+    </div>
+      <!--  <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" DisappearAfter="2000" StaticSubMenuIndent="16px">
+            <Items>
+                <asp:MenuItem Text="Master" Value="Master">
+                    <asp:MenuItem NavigateUrl="~/Faculty.aspx" Text="Faculty" Value="Faculty"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Department.aspx" Text="Department" Value="Department"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Employee.aspx" Text="Employee" Value="Employee"></asp:MenuItem>                   
+                    <asp:MenuItem NavigateUrl="~/EmployeeArrear.aspx" Text="Employee Arrear" Value="Employee Arrear"></asp:MenuItem>              
+                </asp:MenuItem>
+                <asp:MenuItem Text="Extra Remuneration" Value="Extra Remuneration">
+                    <asp:MenuItem NavigateUrl="~/ExamRemuneration.aspx" Text="Exam Remuneratiom" Value="Exam Remuneratiom"></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem Text="Reports" Value="Reports"></asp:MenuItem>
+                <asp:MenuItem Text="Budget" Value="Budget"></asp:MenuItem>
+                <asp:MenuItem Text="Log Out" Value="Log Out"></asp:MenuItem>
+            </Items>
+        </asp:Menu>-->
+     <br />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+               
+    </asp:ContentPlaceHolder>
+        
+        
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="UniversityProject.Site1" %>
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="UniStyle.css" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+</head>
+<body background="images/Bg.png">
+    <form id="form1" runat="server">
+    <div style="height:10%; background-color:#000066">
+            <img src="images/msuWhite.png" style="width:780px; height:110px"/>
+        <div>
+            <asp:Menu ID="menu" runat="server" Orientation="Horizontal" Height="50px" Width="100%" BackColor="#0c769f" ForeColor="#ffffff" DynamicHorizontalOffset="2" DynamicHoverStyle-ForeColor="#FFFFFF" Font-Size="1em" StaticSubMenuIndent="10px" Font-Names="Bookman Old Style" CssClass="Menu">
+                <DynamicHoverStyle BackColor="#000066" ForeColor="white" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#0c769f"  />
+                <DynamicSelectedStyle BackColor="#000000" />
+                <DynamicItemTemplate>
+                    <%# Eval("Text") %>
+                </DynamicItemTemplate>
+                <Items>
+     
+                    <asp:MenuItem Text="Master" Value="Master">
+                        <asp:MenuItem Text="Faculty" Value="Faculty" NavigateUrl="~/Faculty.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Department" Value="Department" NavigateUrl="~/Department.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Employee" Value="Employee"></asp:MenuItem>
+                        <asp:MenuItem Text="Salary" Value="Salary"></asp:MenuItem>
+                        <asp:MenuItem Text="Employee Arrear" Value="Employee Arrear" NavigateUrl="~/EmployeeArrear.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Manual Bills" Value="Manual Bills"></asp:MenuItem>
+                        <asp:MenuItem Text="Savings" Value="Savings"></asp:MenuItem>                       
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Extra Remunerations" Value="Extra Remunerations">
+                            <asp:MenuItem Text="Part Time Degree Course" Value="Part Time Degree Course"></asp:MenuItem>
+                            <asp:MenuItem Text="Exam Remuneration" Value="Exam Remuneration"></asp:MenuItem>
+                            <asp:MenuItem Text="Testing" Value="Testing"></asp:MenuItem>
+                            <asp:MenuItem Text="PT PGDCA" Value="PT PGDCA"></asp:MenuItem>
+                            <asp:MenuItem Text="D. A. Arrears" Value="D. A. Arrears"></asp:MenuItem>
+                    </asp:MenuItem>                
+                    <asp:MenuItem Text="Reports" Value="Reports">
+                        <asp:MenuItem Text="Master Reports" Value="Master Reports">
+                            <asp:MenuItem Text="Faculty" Value="Faculty"></asp:MenuItem>
+                            <asp:MenuItem Text="Department" Value="Department"></asp:MenuItem>
+                            <asp:MenuItem Text="Empolyee" Value="Empolyee"></asp:MenuItem>
+                            <asp:MenuItem Text="Salary" Value="Salary"></asp:MenuItem>
+                            <asp:MenuItem Text="Arrears" Value="Arrears"></asp:MenuItem>
+                            <asp:MenuItem Text="Manual Bills" Value="Manual Bills"></asp:MenuItem>
+                            <asp:MenuItem Text="Savings" Value="Savings"></asp:MenuItem>
+                            <asp:MenuItem Text="PTD" Value="PTD"></asp:MenuItem>
+                            <asp:MenuItem Text="Exam Remuneration" Value="Exam Remuneration"></asp:MenuItem>
+                            <asp:MenuItem Text="Testing" Value="Testing"></asp:MenuItem>
+                            <asp:MenuItem Text="PT PGDCA" Value="PT PGDCA"></asp:MenuItem>
+                            <asp:MenuItem Text="D. A. Arrears" Value="D. A. Arrears"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Salary Certificate" Value="Salary Certificate"></asp:MenuItem>
+                        <asp:MenuItem Text="Form 16" Value="Form 16"></asp:MenuItem>
+                        <asp:MenuItem Text="Estimate Tax Calculations" Value="Estimate Tax Calculations"></asp:MenuItem>
+                        <asp:MenuItem Text="Quaterly Reports" Value="Quaterly Reports">
+                            <asp:MenuItem Text="First Quarter" Value="First Quarter"></asp:MenuItem>
+                            <asp:MenuItem Text="Second Quarter" Value="Second Quarter"></asp:MenuItem>
+                            <asp:MenuItem Text="Third Quarter" Value="Third Quarter"></asp:MenuItem>
+                            <asp:MenuItem Text="Fourth Quarter" Value="Fourth Quarter"></asp:MenuItem>
+                            <asp:MenuItem Text="Quarterly Reports (Annual)" Value="Quarterly Reports (Annual)"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Annual Report Data" Value="Annual Report Data"></asp:MenuItem>
+                        <asp:MenuItem Text="Salary Details For F Y" Value="Salary Details For F Y"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Utility" Value="Utility">
+                        <asp:MenuItem Text="Change Password" Value="Change Password"></asp:MenuItem>
+                        <asp:MenuItem Text="Calculator" Value="Calculator"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Log Out" Value="Log Out"></asp:MenuItem>
+                </Items>
+
+                <StaticHoverStyle BackColor="#ccccff" ForeColor="Black" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#FFCC66" />
+
+            </asp:Menu>
+
+        </div>
+        
+    </div>
+        <div>
+            <asp:ContentPlaceHolder ID="head" runat="server">
+               
+    </asp:ContentPlaceHolder>
+        </div>
+        
+    </form>
+    
+</body>
+</html>

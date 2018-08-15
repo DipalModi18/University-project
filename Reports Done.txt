@@ -1,0 +1,13 @@
+MASTER  -> Arrears
+	->Employee
+	->Manual Bills
+	->Savings
+	->Exam Remuneration
+	-> DA Arrears
+	->PTD
+	->Department
+	->Faculty
+	->Salary
+	->PT PGDCA
+	->Testing
+

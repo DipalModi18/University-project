@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site3.master.cs"  Inherits="UniversityProject.Site3" %><%-- --%>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+#menu ul{
+    list-style:none;
+}
+#menu ul li{
+    background-color:#333;
+    border:1px solid white;
+    width:19%;       /*16.5em;*/
+    height:3em;
+    line-height:3em;
+    text-align:center;
+    float:left;
+    position:relative;
+}
+#menu ul li a{
+    text-decoration:none;
+    color:white;
+    display:block;
+}
+#menu ul li a:hover
+{
+    background-color:darkcyan; 
+}
+#menu ul ul{
+    position:absolute;
+    display:none;
+}
+#menu ul li:hover >ul{
+    display:block;
+}
+#menu ul ul ul{
+    margin-left:100%;
+    top:0px;
+    position:absolute;
+    display:none;
+    z-index:1;
+}
+#menu ul ul li, #menu ul ul ul li{
+background-color:#333;
+    border:1px solid white;
+    width:100%;       /*16.5em;*/
+    height:3em;
+    line-height:3em;
+    text-align:center;
+    position:relative;
+    margin:0em;
+    padding:0em;
+}
+    </style>
+</head>
+<body background="images/Bg.png">
+    <form id="form1" runat="server">
+        <div style="height:10%; background-color:#000066">
+            <img src="images/msuWhite.png" style="width:780px; height:110px"/>
+        </div>
+
+        <nav class="navbar navbar-default">
+        <div id="menu" style="background-color: #333;">
+            <ul>
+                <li><a href="#">Master<span><img src="images/down1.png"</span></a>
+                    <ul>
+                        <li><a href="Faculty.aspx">Faculty</a></li>
+                        <li><a href="Department.aspx">Department</a></li>
+                        <li><a href="Employee.aspx">Employee</a></li>
+                        <li><a href="SalarySearch.aspx">Salary</a></li>
+                        <li><a href="EmployeeArrear.aspx">Employee Arrear</a></li>
+                        <li><a href="ManualBillsSearch.aspx">Manual Bills</a></li>
+                        <li><a href="Savings.aspx">Savings</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Extra Remuneration<span><img src="images/down1.png"</span></a>
+                    <ul>
+                        <li><a href="PartTimeDegreeCourse.aspx">Part Time Degree Course</a></li>
+                        <li><a href="ExamRemuneration.aspx">Exam Remuneration</a></li>
+                        <li><a href="TestingSearch.aspx">Testing</a></li>
+                        <li><a href="PTPGDCASearch.aspx">PT PGDCA</a></li>
+                        <li><a href="DaArrears.aspx">D. A. Arrears</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Reports<span><img src="images/down1.png"</span></a>
+                    <ul>
+                        <li><a href="#">Master Reports<span><img src="images/right1.png"</span></a>
+                            <ul>
+                                <li><a href="WebFormFaculty.aspx">Faculty</a></li>
+                                <li><a href="WebFormDepartment.aspx">Department</a></li>
+                                <li><a href="WebFormEmployee.aspx">Employee</a></li>
+                                <li><a href="PopupSalary.aspx">Salary</a></li>
+                                <li><a href="PopupArrears.aspx">Arrears</a></li>
+                                <li><a href="PopupManualBills.aspx">Manual Bills</a></li>
+                                <li><a href="PopupSavings.aspx">Savings</a></li>
+                                <li><a href="PopupPTD.aspx">PTD</a></li>
+                                <li><a href="PopupExamRemuneration.aspx">Exam Remuneration</a></li>
+                                <li><a href="PopupTesting.aspx">Testing</a></li>
+                                <li><a href="PopupPTPGDCA.aspx">PT PGDCA</a></li>
+                                <li><a href="PopupDaArrears.aspx">D. A. Arrears</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="PopupSalaryCertificate.aspx" target="_blank">Salary Certificate</a></li>
+                        <li><a href="PopupForm16.aspx" target="_blank">Form16</a></li>
+                        <li><a href="PopupEstimateTaxCalculation.aspx" target="_blank">Estimate Tax Calculation</a></li>
+                        <li><a href="#">Quartely Reports<span><img src="images/right1.png"</span></a>
+                            <ul>
+                                <li><a href="WebFormFirstQuarter.aspx">First Quarter</a></li>
+                                <li><a href="WebFormSecondQuarter.aspx">Second Quarter</a></li>
+                                <li><a href="WebFormThirdQuarter.aspx">Third Quarter</a></li>
+                                <li><a href="WebFormFourthQuarter.aspx">Fourth Quarter</a></li>
+                                <li><a href="PopupQuarterlyReport.aspx">Quartely Reports(Annual)</a></li>
+                            </ul>
+                        </li>
+                        <%-- <li><a href="#">Annual Report Data</a></li>
+                        <li><a href="#">Salary Details for F.Y.</a></li>--%>
+                    </ul>
+                </li>
+                <li><a href="#">Utility<span><img src="images/down1.png"</span></a>
+                    <ul>
+                        <li><a href="ChangePassword.aspx">Change Password</a></li>
+                        <li><a href="Calculator.aspx" target="_blank">Calculator</a></li>
+                    </ul>
+                </li>
+                <li><a href="LogOut.aspx">Log out</a></li>
+            </ul>
+        </div>
+            </nav>
+    <div>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

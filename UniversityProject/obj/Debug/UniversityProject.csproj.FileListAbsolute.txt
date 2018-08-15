@@ -1,0 +1,2 @@
+C:\Users\HP\Desktop\UniversityProject\UniversityProject\obj\Debug\UniversityProject.csprojResolveAssemblyReference.cache
+E:\University project\UniversityProject\UniversityProject\obj\Debug\UniversityProject.csprojResolveAssemblyReference.cache

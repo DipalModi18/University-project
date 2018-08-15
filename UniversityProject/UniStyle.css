@@ -1,0 +1,23 @@
+﻿
+
+        .btn {
+            display: block;
+            padding: 12px;
+            color:white;
+            cursor:pointer;
+            width:auto;
+            text-align:center;
+            text-decoration:none;
+        }
+
+.lblStyle {
+    font-family: "Lucida Fax","Times New Roman";
+    color: #00688b;
+
+}
+
+.HeadLabel {
+    font-size:x-large;
+    font-family:sans-serif;
+    font-family:SimSun;
+}
